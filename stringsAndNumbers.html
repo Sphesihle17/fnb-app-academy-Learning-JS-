@@ -1,0 +1,42 @@
+<html>
+<head>
+<link rel="stylesheet" type="text/css" href="style.css">
+
+</head>
+
+<body> 
+
+<p id="outputText"></p>
+
+
+<script>
+
+var text1 = "60";
+var text2= "40";
+
+var num1 = stringToNumber(text1);
+var num2 = stringToNumber(text2);
+if (isNaN(num1)|| isNaN(num2)){
+    document.getElementById("outputText").innerHTML = "PLEASE ENTER A VALID NUMBER"
+} else{
+    document.getElementById("outputText").innerHTML = num1 + num2;
+
+}
+
+
+
+
+
+function stringToNumber(text){
+return parseInt(text);
+
+}
+ 
+
+
+
+ </script>
+
+</body>
+    <body style="background-color: rgba(172, 255, 47, 0.63);"></body>
+   </html> 

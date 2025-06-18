@@ -1,0 +1,62 @@
+table{
+color: rgba(255, 228, 196, 0.075);
+ text-align: center;   
+ border-collapse: collapse;
+ font: normal 3em Arial, Helvetica, sans-serif;
+}
+
+tr{
+height: 16.02vh;
+background-color: rgba(150, 87, 150, 0.459);
+}
+body,table{
+  font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+}
+td{
+width: 25vw;
+border: 1px solid #4e494d8a;
+
+}
+#inputBox{
+background-color: #221e21c2;
+text-align: right;
+width: 100%;
+font-size: 2em;
+color: #ffffffa1;
+border: 0px;
+}
+
+.digitButton{
+    background-color: #807e805e;
+    color: #ffffff;
+    font-weight: bold;
+    font-size: 1.5em;
+    
+}
+.operatorButton{
+   background-color:rgba(197, 135, 222, 0.349);
+   color: #ffffff; 
+   font-weight: bold;
+   font-size: 1.5em;
+
+}
+.ACButton{
+  background-color: #656165; 
+  color:  #ffffff;
+  font-weight: bold;
+}
+
+#menu a{
+  text-decoration: none;
+
+  width: 100;
+  height: 40px;
+  padding-bottom: 12px;
+
+  color: rgba(0, 0, 0, 0.658);
+}
+
+#menu a:hover{
+  color: orchid;
+  
+}

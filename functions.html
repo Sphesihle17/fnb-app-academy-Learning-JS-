@@ -1,0 +1,41 @@
+<html>
+<head>
+<link rel="stylesheet" type="text/css" href="style.css">
+
+</head>
+
+<body> 
+<h1 id ="heading1" onclick="changeText()">CREATING FUNCTIONS</h1>
+<p id="multiplication"></p>
+
+
+<script>
+document.getElementById("multiplication").innerHTML = multiplyNumbers(1, 2, 4);
+function changeText() {
+if (document.getElementById("heading1").innerHTML== 'CREATING FUNCTIONS'){
+document.getElementById("heading1").innerHTML='IS EASY'
+
+
+
+}
+else{
+
+    document.getElementById("heading1").innerHTML= 'CREATING FUNCTIONS'
+
+}
+}
+
+function multiplyNumbers(num1, num2, num3){
+return num1 + " x " +  num2 + " x " + num3 + " = " + num1* num2 * num3;
+}
+ 
+
+
+
+ </script>
+
+</body>
+    <body style="background-color: rgba(105, 90, 205, 0.842);"></body>
+    </html>
+
+

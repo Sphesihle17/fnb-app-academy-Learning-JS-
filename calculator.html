@@ -1,0 +1,139 @@
+<html>
+<head>
+<link rel="stylesheet" type="text/css" href="style.css">
+
+</head>
+
+<body> 
+
+
+<!-- Table border -->
+<table border="1">
+ 
+
+<!--Table row and data for our display box-->
+<tr>
+<td colspan="4">
+    <input type="text"  id= "inputBox" value="0"/>
+</td>
+</tr>
+
+<!-- Table row and data for the digits and the multiplication sign -->
+<tr>
+    <td class="digitButton" onclick="digitBtnPressed(7)">7</td>
+    <td class="digitButton" onclick="digitBtnPressed(8)">8</td>
+    <td class="digitButton" onclick="digitBtnPressed(9)">9</td>
+    <td class="operatorButton"onclick="operatorBtnPressed('*')">x</td>
+
+</tr>
+
+<!-- Table row and data for the digits and the subtraction sign -->
+<tr>
+    <td class="digitButton" onclick="digitBtnPressed(4)">4</td>
+    <td class="digitButton" onclick="digitBtnPressed(5)">5</td>
+    <td class="digitButton"onclick="digitBtnPressed(6)">6</td>
+    <td class="operatorButton" onclick="operatorBtnPressed('-')">-</td>
+
+</tr>
+
+<!-- Table row and data for the digits and plus sign -->
+<tr>
+    <td class="digitButton"onclick="digitBtnPressed(1)">1</td>
+    <td class="digitButton" onclick="digitBtnPressed(2)">2</td>
+    <td class="digitButton" onclick="digitBtnPressed(3)">3</td>
+    <td class="operatorButton" onclick="operatorBtnPressed('+')">+</td>
+</tr>
+
+
+<!-- Table rows and data for the zero divisionand ac buttons -->
+ 
+<tr>
+<td class="digitButton"onclick= "digitBtnPressed (0)" colspan="2">0</td>
+<td class="ACButton" onclick="btnACPressed()">AC</td>
+<td class="operatorButton" onclick="operatorBtnPressed('/')">/</td>
+</tr>
+
+<!-- //Table row and data for the equal to sign -->
+<tr>
+<td class="operatorButton" colspan="4" onclick="equalsBtnPressed()">=</td>
+</tr>
+
+<!-- Additional row for power and square root -->
+<tr>
+    <td class="operatorButton" onclick="operatorBtnPressed('^')">x²</td>
+    <td class="operatorButton" onclick="operatorBtnPressed('^3')">x³</td>
+  <td class="operatorButton" onclick="operatorBtnPressed('^4')">x⁴</td>
+  <td class="operatorButton" onclick="operatorBtnPressed('√')">√</td
+    <td colspan="2"></td> <!-- Empty cells to keep layout consistent -->
+  </tr>
+  
+
+</table>
+
+<script>
+    let newLine = true;
+    let currentOperator;
+    let value1;
+    //Event handler for the digits
+    function digitBtnPressed(button) {
+        const inputBox = document.getElementById("inputBox");
+        if (newLine) {
+            inputBox.value = button;
+            newLine = false;
+        } else {
+            inputBox.value += button;
+        }
+    }
+    //Event handler for the AC button
+    function btnACPressed() {
+        document.getElementById("inputBox").value = 0;
+        newLine = true;
+        value1 = null;
+        currentOperator = null;
+    }
+    //Event handler for the operators
+    function operatorBtnPressed(operator) {
+        value1 = parseFloat(document.getElementById("inputBox").value);
+        currentOperator = operator;
+        newLine = true;
+    }
+    //Event handler for the equals too sign
+    function equalsBtnPressed() {
+        const inputBox = document.getElementById("inputBox");
+        let value2 = parseFloat(inputBox.value);
+        let finalTotal;
+    
+        switch (currentOperator) {
+            case "+":
+                finalTotal = value1 + value2;
+                break;
+            case "-":
+                finalTotal = value1 - value2;
+                break;
+            case "*":
+                finalTotal = value1 * value2;
+                break;
+            case "/":
+                finalTotal = value1 / value2;
+                break;
+            case "√":
+                finalTotal = Math.sqrt(value1);
+                break;
+            case "^3":
+                finalTotal = Math.pow(value1, 3);
+                break;
+            case "^4":
+                finalTotal = Math.pow(value1, 4);
+                break;
+        }
+    
+        inputBox.value = finalTotal;
+        newLine = true;
+    }
+    </script>
+    
+</body>
+    
+    </html>
+
+
